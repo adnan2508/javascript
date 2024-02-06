@@ -1,15 +1,23 @@
-const heights2 = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
+const employees = [
+    { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+    { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+    { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+    { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+];
 
-function lowest (heights2){
-    let friend = heights2[0].length;
-    let friendName = heights2[0];
-    for(const height of heights2){
-        if(height.length < friend){
-            friendName = height;
-        }
+function findAveragePhonePrice (employees){
+    let cost = 0;
+    let currentSalary;
+    let salary;
+    let totalSalary = 0;
+    
+    for(const employee of employees) {
+        currentSalary = employee.experience * employee.increment;
+        salary = currentSalary + employee.starting;
+        totalSalary = totalSalary + salary;
     }
-    return friendName;
+    return totalSalary;
 }
 
-const number = lowest(heights2);
+const number = findAveragePhonePrice(employees);
 console.log(number);
