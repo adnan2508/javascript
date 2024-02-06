@@ -1,9 +1,14 @@
-const heights2 = [167, 190, 120, 165, 137];
+const heights2 = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
 
 function lowest (heights2){
-        for (const height of heights2){
-            console.log(height);
+    let friend = heights2[0].length;
+    let friendName = heights2[0];
+    for(const height of heights2){
+        if(height.length < friend){
+            friendName = height;
         }
+    }
+    return friendName;
 }
 
 const number = lowest(heights2);
