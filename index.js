@@ -55,7 +55,30 @@ function password(obj) {
   }
 }
 
+function monthlySavings(arr , livingCost) {
+    if(Array.isArray(arr) === true && typeof livingCost === 'number'){
+        let salary = 0;
+        let tax;
+        let amount;
+        let savings;
+        for(const num of arr) {
+            if(num >= 3000){
+                tax = (num * 20) / 100;
+                amount = num - tax;
+                salary = salary + amount;
+            } else {
+                salary = salary + num;
+            }
+        }
+        savings = salary - livingCost;
+        if(savings >= 0) {
+            return savings;
+        } else {
+            return `"earn more"`;
+        }
+    } else{
+        return "invalid input";
+    }
+}
 
-
-
-console.log(password());
+console.log(monthlySavings([1000 , 2000 , 3000 ] , 5400));
