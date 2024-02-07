@@ -2,7 +2,7 @@ function calculateMoney(ticketSale) {
   const cost = 500 + 8 * 50;
   const ticketPrice = 120 * ticketSale;
   if (ticketSale < 0) {
-    return "Invalid Number";
+    return `"Invalid Number"`;
   } else {
     const total = ticketPrice - cost;
     return total;
@@ -41,7 +41,7 @@ function deleteInvalids(array) {
     }
     return finalArray;
   } else {
-    return "Invalid Array";
+    return `"Invalid Array"`;
   }
 }
 
@@ -81,4 +81,3 @@ function monthlySavings(arr , livingCost) {
     }
 }
 
-console.log(monthlySavings([1000 , 2000 , 3000 ] , 5400));
